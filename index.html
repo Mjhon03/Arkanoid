@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Especificación de Requisitos - Juego Arkanoid</title>
+  <link rel="shortcut icon" href="https://gogeticons.com/frontend/web/icons/data/9/6/8/4/7/arkanoid.svg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -40,7 +41,8 @@
     <h3>1.4 Referencias</h3>
     <ul>
       <li>IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications</li>
-      <li>Documentación de HTML5, CSS3 y JavaScript (para versiones web)</li>
+
+      <li><a href="https://accedacris.ulpgc.es/handle/10553/11108">Desarrollo del juego del Arknoid en entorno web</a></li>
     </ul>
 
     <h3>1.5 Visión general del documento</h3>
@@ -112,7 +114,7 @@
   <section id="requisitos">
     <h2>3. Requisitos Específicos</h2>
     
-    <h3>3.1 Requisitos Funcionales</h3>
+    <h3>Requisitos Funcionales</h3>
     <ol>
       <li><strong>RF-01. Inicio del juego:</strong> El sistema deberá permitir al jugador iniciar una nueva partida mediante un botón de "Jugar" en la pantalla principal.</li>
       <li><strong>RF-02. Movimiento de la plataforma:</strong> El sistema deberá permitir al jugador controlar la plataforma horizontalmente utilizando las teclas de dirección (flechas) o el mouse.</li>
@@ -138,7 +140,7 @@
     </ul>
   </section>
   <section id="interfaces-externas">
-    <h3>3.2 Interfaces Externas</h3>
+    <h3>3.1 Interfaces Externas</h3>
     
     <h3>Interfaz de Usuario</h3>
     <p>La interfaz gráfica del videojuego deberá ser simple, intuitiva y estar orientada a una experiencia de juego fluida. A continuación, se describen los componentes principales de la interfaz:</p>
@@ -204,7 +206,7 @@
     </ul>
   
 
-  <h3 id="funciones">3.2 Funciones</h3>
+  <h3 id="funciones">3.3 Funciones</h3>
 
   <div class="block">
     <p><strong>Organización elegida:</strong><br>
@@ -281,20 +283,20 @@
     <li><em>(Futuro)</em> Almacenar y ordenar puntajes en una tabla de rankings locales o en línea.</li>
   </ul>
 
-    <h3 id="requisitos-interfaz">3.3 Requisitos de interfaz</h3>
+    <h3 id="requisitos-interfaz">3.4 Requisitos de interfaz</h3>
     <ul>
       <li><strong>Teclado:</strong> Movimiento izquierda/derecha, pausa.</li>
       <li><strong>Mouse:</strong> Movimiento de la paleta (opcional).</li>
       <li><strong>Pantalla:</strong> Menú principal, interfaz de juego, pantalla de fin de juego.</li>
     </ul>
   
-    <h3 id="requisitos-rendimiento">3.4 Requisitos de rendimiento</h3>
+    <h3 id="requisitos-rendimiento">3.5 Requisitos de rendimiento</h3>
     <ul>
       <li>El sistema deberá tener soporte para pantallas desde una resolución de 720p.</li>
       <li>El sistema deberá tener una latencia de entrada menor a 100 ms.</li>
     </ul>
   
-    <h3 id="restricciones-diseno">3.5 Restricciones de Diseño</h3>
+    <h3 id="restricciones-diseno">3.6 Restricciones de Diseño</h3>
     <ul>
       <li><strong>Modularidad:</strong> El sistema debe estar dividido en módulos independientes (motor de juego, UI, entrada, audio, gestor de niveles) para facilitar el mantenimiento y la escalabilidad del producto.</li>
       <li><strong>Tecnologías estándar:</strong> La versión web debe desarrollarse utilizando tecnologías estándar como HTML5, CSS3 y JavaScript, sin dependencias en plugins externos.</li>
@@ -303,7 +305,7 @@
       <li><strong>Consistencia visual:</strong> El estilo visual debe mantenerse uniforme en todo el juego, con una estética retro coherente.</li>
     </ul>
   
-    <h3 id="atributos-sistema">3.6 Atributos del Sistema</h3>
+    <h3 id="atributos-sistema">3.7 Atributos del Sistema</h3>
     <ul>
       <li><strong>Disponibilidad:</strong> El juego estará disponible para ser ejecutado localmente en todo momento, sin requerir conexión a internet.</li>
       <li><strong>Usabilidad:</strong> La interfaz debe ser lo suficientemente intuitiva para que cualquier usuario pueda comprender el funcionamiento del juego sin necesidad de instrucciones complejas.</li>
