@@ -1,0 +1,175 @@
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #0f0f0f;
+      color: #ffffff;
+      line-height: 1.6;
+      padding-top: 140px;
+      /* Ajuste para header (70px) + nav (70px) */
+    }
+
+    .header-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: linear-gradient(to right, #3a0ca3, #7209b7);
+      text-align: center;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      animation: slideDown 1s ease-out;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      height: auto;
+    }
+
+    .header-fixed h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .nav-fixed {
+      position: fixed;
+      top: auto;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background: #222;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-fixed a {
+      color: #bbb;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-fixed a:hover {
+      color: #fff;
+    }
+
+    section {
+      padding: 3rem 0px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 1s ease-in;
+      scroll-margin-top: 150px;
+      /* para que el scroll no tape el título */
+    }
+
+    h2 {
+      color: #ffbd39;
+      border-bottom: 2px solid #ffbd39;
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      color: #4cc9f0;
+      margin-top: 1.5rem;
+    }
+
+    ul,
+    ol {
+      margin-left: 2rem;
+    }
+
+    .block {
+      background: #1f1f1f;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-left: 5px solid #ffbd39;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      margin-top: 3rem;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .highlight {
+      color: #f72585;
+    }
+
+    button#speedBtn {
+      background: linear-gradient(to right, #f72585, #7209b7);
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    button#speedBtn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #7209b7, #3a0ca3);
+    }
+
+    #velocityDisplay {
+      font-family: 'Orbitron', sans-serif;
+      color: #4cc9f0;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    button#speedUpBtn,
+    button#speedDownBtn {
+      background: linear-gradient(to right, #f72585, #7209b7);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      transition: transform 0.2s, background 0.3s;
+      margin: 0 0.5rem;
+    }
+
+    button#speedUpBtn:hover,
+    button#speedDownBtn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #7209b7, #3a0ca3);
+    }

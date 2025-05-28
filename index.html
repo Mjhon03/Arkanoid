@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Especificación de Requisitos - Juego Arkanoid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header-fixed">
+    <h1>Especificación de Requisitos de Software</h1>
+    <p>Juego tipo <span class="highlight">Arkanoid</span></p>
+    
+    <nav class="nav-fixed">
+      <a href="#introduccion">Introducción</a>
+      <a href="#descripcion">Descripción General</a>
+      <a href="#requisitos">Requisitos Específicos</a>
+      <a href="#apendice">Apéndice</a>
+      <a href="#juego">Demo del juego</a>
+    </nav>
+  </header>
+
+  <section id="introduccion">
+    <h2>1. Introducción</h2>
+    <h3>1.1 Propósito</h3>
+    <div class="block">Este documento tiene como propósito definir los requisitos del sistema para el desarrollo de un videojuego del tipo Arkanoid. Está destinado a los desarrolladores, diseñadores, evaluadores y cualquier parte interesada en comprender las funcionalidades y restricciones del sistema.
+    </div>
+
+    <h3>1.2 Alcance</h3>
+    <div class="block">El producto es un juego arcade en el que el jugador controla una paleta para evitar que una pelota caiga, haciéndola rebotar contra bloques situados en la parte superior de la pantalla. El objetivo es eliminar todos los bloques para avanzar de nivel. El juego está orientado a un solo jugador y se ejecutará en plataformas de escritorio o navegadores web.</div>
+
+    <h3>1.3 Definiciones</h3>
+    <ul>
+      <li><strong>UI</strong>: Interfaz de Usuario</li>
+      <li><strong>FPS</strong>: Fotogramas por segundo</li>
+      <li><strong>HTML5</strong>: Lenguaje de marcado para desarrollo web</li>
+    </ul>
+
+    <h3>1.4 Referencias</h3>
+    <ul>
+      <li>IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications</li>
+      <li>Documentación de HTML5, CSS3 y JavaScript (para versiones web)</li>
+    </ul>
+
+    <h3>1.5 Visión general del documento</h3>
+    <div class="block">Este documento sigue la estructura recomendada por el estándar IEEE 830-1998 para especificaciones de requisitos de software. Está dividido en secciones que cubren la descripción general del producto, los requisitos funcionales, no funcionales y de interfaz, así como supuestos, restricciones y posibles requisitos futuros. Esta organización permite una comprensión clara y estructurada del sistema a desarrollar.
+    </div>
+  </section>
+
+  <section id="descripcion">
+    <h2>2. Descripción General</h2>
+    <div class="block">El producto a desarrollar es un videojuego tipo Arkanoid, un juego clásico de estilo arcade en el que el jugador controla una paleta ubicada en la parte inferior de la pantalla, con el objetivo de mantener en juego una pelota que rebota y destruye bloques ubicados en la parte superior. A medida que el jugador avanza, los niveles presentan mayor dificultad con patrones de bloques más complejos, aumento en la velocidad de la pelota y posibles elementos especiales.
+      El juego se plantea como una aplicación de entretenimiento para un solo jugador, con una estética retro y mecánicas simples pero adictivas, enfocada tanto en usuarios nostálgicos de los juegos clásicos como en nuevos jugadores que buscan una experiencia casual.
+      </div>
+    <h3>2.1 Perspectiva del producto</h3>
+    <div class="block">El juego Arkanoid a desarrollar es una aplicación independiente, diseñada como un sistema autocontenible que se ejecutará localmente o en la web. Está compuesto por los siguientes módulos:</div>
+    <ul>
+      <li>Motor de juego</li>
+      <li>Interfaz de usuario</li>
+      <li>Gestor de niveles</li>
+      <li>Módulo de entrada</li>
+      <li>Módulo de audio (opcional)</li>
+    </ul>
+    <div class="block">La arquitectura modular facilitará futuras extensiones como soporte multijugador, nuevos niveles y modos de juego.
+    </div>
+    <h3>2.2 Funciones del producto</h3>
+    <div class="block">El juego permite al usuario:
+    </div>
+    <ul>
+      <li>Controlar una paleta para hacer rebotar una pelota.</li>
+      <li>Destruir bloques al impactar la pelota contra ellos.</li>
+      <li>Ganar puntos por cada bloque destruido.</li>
+      <li>Avanzar de nivel tras destruir todos los bloques.</li>
+      <li>Perder vidas si la pelota no es interceptada.</li>
+      <li>Visualizar información en pantalla: puntuación, nivel, vidas.</li>
+      <li>Pausar, reiniciar o salir del juego desde el menú principal.</li>
+
+    </ul>
+
+    <h3>2.3 Características del usuario</h3>
+    <div class="block">Los usuarios esperados son jugadores casuales sin necesidad de experiencia previa. Se espera que tengan conocimientos básicos de uso del teclado o mouse y que busquen una experiencia de juego accesible, rápida y entretenida.
+    </div>
+
+    <h3>2.4 Restricciones</h3>
+    <ul>
+      <li>Compatibilidad con HTML5, CSS3 y JS</li>
+      <li>Diseño adaptado a resoluciones comunes</li>
+      <li>Compatibilidad con navegadores web que soporten HTML5, CSS y Javascript</li>
+      <li>Tiempo de respuesta inmediato (latencia baja)</li>
+      <li>El juego debe estar diseñado para resoluciones de pantalla comunes</li>
+      <li>Uso de tecnologías definidas (ej. HTML5 para versión web)</li>
+    </ul>
+    <h3>2.5 Suposiciones y dependencias</h3>
+    <ul>
+      <li>El usuario dispone de teclado y/o mouse funcional.</li>
+      <li>El entorno de ejecución es compatible con los requisitos mínimos.</li>
+      <li>No se requiere conexión a internet.</li>
+    </ul>
+    <h3>2.6 Requisitos futuros</h3>
+    <div class="block">Estas funcionalidades no se implementarán en la versión inicial, pero podrán incrementar la jugabilidad, accesibilidad y el valor del producto.</div>
+    <ul>
+      <li><strong>Modo multijugador en línea:</strong> Incorporar un modo de juego competitivo o cooperativo que permita a varios jugadores participar simultáneamente a través de Internet.</li>
+      <li><strong>Editor de niveles personalizado:</strong> Permitir a los jugadores crear, guardar y compartir sus propios niveles personalizados mediante una interfaz gráfica amigable.</li>
+      <li><strong>Integración con plataformas móviles:</strong> Adaptar el videojuego para que funcione en dispositivos móviles (Android e iOS), considerando aspectos como control táctil y optimización de rendimiento.</li>
+      <li><strong>Integración con puntuaciones en la nube:</strong> Implementar una sección donde los jugadores puedan revisar su desempeño a través de gráficos, tiempos, puntajes y niveles completados.</li>
+      <li><strong>Sistema de logros y recompensas:</strong> Incluir un sistema de trofeos o logros que motive al jugador a cumplir metas específicas dentro del juego.</li>
+      <li><strong>Mecánicas de juego ampliadas:</strong> Incluir nuevos elementos como bloques con efectos especiales, potenciadores adicionales o enemigos dinámicos que se muevan por el escenario.</li>
+    </ul>
+  </section>
+
+  <section id="requisitos">
+    <h2>3. Requisitos Específicos</h2>
+    
+    <h3>3.1 Requisitos Funcionales</h3>
+    <ol>
+      <li><strong>RF-01. Inicio del juego:</strong> El sistema deberá permitir al jugador iniciar una nueva partida mediante un botón de "Jugar" en la pantalla principal.</li>
+      <li><strong>RF-02. Movimiento de la plataforma:</strong> El sistema deberá permitir al jugador controlar la plataforma horizontalmente utilizando las teclas de dirección (flechas) o el mouse.</li>
+      <li><strong>RF-03. Rebote de la pelota:</strong> La pelota deberá rebotar automáticamente al impactar con la plataforma, los bloques o los bordes del escenario, modificando su trayectoria de forma realista.</li>
+      <li><strong>RF-04. Rompimiento de bloques:</strong> Cuando la pelota impacte un bloque, el sistema deberá eliminarlo visualmente y aumentar la puntuación del jugador.</li>
+      <li><strong>RF-05. Pérdida de vida:</strong> Si la pelota cae por debajo de la plataforma, el sistema deberá restar una vida al jugador y reiniciar la pelota en la plataforma.</li>
+      <li><strong>RF-06. Condiciones de victoria:</strong> El sistema deberá detectar cuando todos los bloques han sido eliminados y mostrar un mensaje de victoria.</li>
+      <li><strong>RF-07. Condiciones de derrota:</strong> El sistema deberá finalizar el juego si el jugador pierde todas sus vidas, mostrando un mensaje de derrota.</li>
+      <li><strong>RF-08. Sistema de puntuación:</strong> El sistema deberá mostrar y actualizar la puntuación del jugador en tiempo real conforme se destruyen bloques.</li>
+      <li><strong>RF-09. Potenciadores:</strong> El sistema deberá incluir bloques especiales que, al ser destruidos, generen potenciadores como: ampliar la plataforma, multiplicar la pelota o activar disparos.</li>
+      <li><strong>RF-10. Menú de pausa:</strong> El sistema deberá permitir pausar el juego mediante la tecla “Esc”, mostrando un menú con opciones para continuar, reiniciar o salir.</li>
+    </ol>
+
+    <h3>Requisitos No Funcionales</h3>
+    <ul>
+      <li><strong>RNF-01. Rendimiento:</strong> El videojuego deberá ejecutarse con una tasa mínima de 30 FPS (cuadros por segundo) en equipos con especificaciones básicas.</li>
+      <li><strong>RNF-02. Portabilidad:</strong> El videojuego deberá ser compatible con sistemas operativos Windows, Linux y MacOS.</li>
+      <li><strong>RNF-03. Usabilidad:</strong> La interfaz del videojuego deberá ser intuitiva, permitiendo que un nuevo jugador comprenda la dinámica básica en menos de 1 minuto.</li>
+      <li><strong>RNF-04. Tiempo de respuesta:</strong> Las acciones del jugador (como mover la plataforma o pausar el juego) deberán tener un tiempo de respuesta menor a 100 ms.</li>
+      <li><strong>RNF-05. Seguridad:</strong> Los archivos del videojuego no deberán realizar escrituras en el sistema del usuario más allá de su carpeta de instalación y almacenamiento de partidas.</li>
+      <li><strong>RNF-06. Mantenibilidad:</strong> El código fuente del videojuego deberá estar documentado y estructurado modularmente, facilitando futuras modificaciones o adiciones.</li>
+      <li><strong>RNF-07. Accesibilidad:</strong> El juego deberá ofrecer una opción de alto contraste para personas con dificultades visuales.</li>
+    </ul>
+  </section>
+  <section id="interfaces-externas">
+    <h3>3.2 Interfaces Externas</h3>
+    
+    <h3>Interfaz de Usuario</h3>
+    <p>La interfaz gráfica del videojuego deberá ser simple, intuitiva y estar orientada a una experiencia de juego fluida. A continuación, se describen los componentes principales de la interfaz:</p>
+    <ul>
+      <li><strong>Pantalla de inicio:</strong>
+        <ul>
+          <li>Botón "Jugar" para iniciar una partida.</li>
+          <li>Botón "Opciones" para acceder a configuración de sonido, controles y accesibilidad.</li>
+          <li>Botón "Salir" para cerrar el juego.</li>
+        </ul>
+      </li>
+      <li><strong>Pantalla de juego:</strong>
+        <ul>
+          <li>Visualización de la plataforma, pelota, bloques y potenciadores en tiempo real.</li>
+          <li>Indicador de puntaje actual.</li>
+          <li>Contador de vidas restantes.</li>
+          <li>Botón o tecla para pausar el juego (ej. tecla "Esc").</li>
+        </ul>
+      </li>
+      <li><strong>Pantalla de pausa:</strong>
+        <ul>
+          <li>Opción para continuar el juego.</li>
+          <li>Opción para reiniciar la partida.</li>
+          <li>Opción para volver al menú principal.</li>
+        </ul>
+      </li>
+      <li><strong>Pantalla de fin de juego:</strong>
+        <ul>
+          <li>Mensaje de “Victoria” o “Derrota” según el caso.</li>
+          <li>Botón para volver al menú principal o iniciar una nueva partida.</li>
+        </ul>
+      </li>
+      <li><strong>Controles del usuario:</strong>
+        <ul>
+          <li>Movimiento de la plataforma: teclas de flechas (←, →) o movimiento del mouse.</li>
+          <li>Pausa: tecla "Esc".</li>
+          <li>Confirmación y navegación en menús: teclado y mouse.</li>
+        </ul>
+      </li>
+    </ul>
+  
+    <h3>Interfaces de Hardware</h3>
+    <p>El videojuego deberá ser compatible con:</p>
+    <ul>
+      <li><strong>Teclado:</strong> para controlar el movimiento de la plataforma y acceder a menús.</li>
+      <li><strong>Mouse (opcional):</strong> para controlar la plataforma y navegar por la interfaz de usuario.</li>
+      <li><strong>Gamepad (en futuras versiones):</strong> como medio alternativo para controlar el juego.</li>
+    </ul>
+  
+    <h3>Interfaces de Software</h3>
+    <p>El videojuego se ejecutará como una aplicación web en cualquier navegador.</p>
+    <ul>
+      <li>No se requerirá conexión con bases de datos ni servicios en la nube en la versión inicial.</li>
+      <li>En versiones futuras, podrá integrarse con servicios de guardado en la nube o rankings en línea.</li>
+    </ul>
+  
+    <h3>Interfaces de Comunicación</h3>
+    <p>En la versión inicial del videojuego, no se establecerán comunicaciones con sistemas externos mediante red.</p>
+    <ul>
+      <li><strong>Ranking en línea:</strong> para comparar puntuaciones con otros jugadores (en versiones futuras).</li>
+      <li><strong>Multijugador en línea:</strong> para competencia entre jugadores remotos mediante protocolo TCP/IP o WebSocket (en versiones futuras).</li>
+      <li><strong>Actualización automática:</strong> el juego podrá conectarse a un servidor para verificar y descargar actualizaciones (en versiones futuras).</li>
+    </ul>
+  
+
+  <h3 id="funciones">3.2 Funciones</h3>
+
+  <div class="block">
+    <p><strong>Organización elegida:</strong><br>
+    Por objetos, ya que el videojuego se compone de entidades claramente identificables que interactúan entre sí. Cada objeto tendrá funciones específicas asociadas, lo que facilita el entendimiento del comportamiento del sistema.</p>
+  </div>
+
+  <h4>Objeto: Jugador</h4>
+  <ul>
+    <li>Inicie una nueva partida desde el menú principal.</li>
+    <li>Controle el movimiento de la paleta mediante teclado o mouse.</li>
+    <li>Pause, reinicie o termine la partida.</li>
+    <li>Visualice su puntaje y número de vidas en pantalla.</li>
+    <li>Reciba una notificación al ganar o perder la partida.</li>
+    <li>Seleccione un nivel (en caso de tener niveles desbloqueados).</li>
+  </ul>
+
+  <h4>Objeto: Paleta</h4>
+  <ul>
+    <li>Mover la paleta horizontalmente en respuesta a las entradas del jugador.</li>
+    <li>Restringir el movimiento de la paleta dentro de los límites del escenario.</li>
+    <li>Detectar colisiones entre la paleta y la pelota.</li>
+    <li>Cambiar la dirección de la pelota tras la colisión según el punto de impacto.</li>
+    <li>Cambiar de tamaño si se aplica un potenciador.</li>
+  </ul>
+
+  <h4>Objeto: Pelota</h4>
+  <ul>
+    <li>Iniciar el movimiento de la pelota una vez que el jugador empiece el juego.</li>
+    <li>Detectar colisiones con la paleta, bloques, bordes del escenario y elementos especiales.</li>
+    <li>Rebotar en función del ángulo de impacto.</li>
+    <li>Perder una vida si la pelota cruza la parte inferior de la pantalla.</li>
+    <li>Duplicarse, acelerarse o ralentizarse si recibe ciertos potenciadores.</li>
+  </ul>
+
+  <h4>Objeto: Bloque</h4>
+  <ul>
+    <li>Detectar colisiones entre la pelota y los bloques.</li>
+    <li>Destruir el bloque y aumentar el puntaje del jugador al ser impactado.</li>
+    <li>Generar un potenciador aleatorio en ciertos casos.</li>
+    <li>Llevar un contador del número de bloques destruidos.</li>
+  </ul>
+
+  <h4>Objeto: Potenciador</h4>
+  <ul>
+    <li>Generar potenciadores aleatorios tras la destrucción de ciertos bloques.</li>
+    <li>Hacer caer el potenciador hacia la paleta.</li>
+    <li>Detectar si el jugador recoge el potenciador.</li>
+    <li>Aplicar el efecto correspondiente al juego (ej. paleta más grande, pelota de fuego, vida extra).</li>
+    <li>Eliminar el potenciador si no es recogido.</li>
+  </ul>
+
+  <h4>Objeto: Nivel</h4>
+  <ul>
+    <li>Cargar los datos del nivel actual (posición de bloques, paleta, dificultad).</li>
+    <li>Detectar la finalización del nivel al destruir todos los bloques.</li>
+    <li>Cargar el siguiente nivel automáticamente o mostrar una pantalla de transición.</li>
+    <li>Permitir el diseño e inclusión de nuevos niveles de forma modular.</li>
+  </ul>
+
+  <h4>Objeto: Interfaz de Usuario</h4>
+  <ul>
+    <li>Mostrar el menú principal con las opciones disponibles.</li>
+    <li>Mostrar información en pantalla durante el juego (puntaje, vidas, nivel).</li>
+    <li>Presentar mensajes de pausa, victoria o derrota según corresponda.</li>
+    <li>Registrar y procesar las acciones del jugador dentro del menú.</li>
+    <li>Permitir la navegación entre pantallas del sistema (inicio, opciones, juego, fin).</li>
+  </ul>
+
+  <h4>Objeto: Sistema de Puntuación</h4>
+  <ul>
+    <li>Aumentar el puntaje del jugador según el tipo de bloque destruido.</li>
+    <li>Mostrar el puntaje actual en pantalla en tiempo real.</li>
+    <li>Registrar el puntaje final al finalizar el juego.</li>
+    <li><em>(Futuro)</em> Almacenar y ordenar puntajes en una tabla de rankings locales o en línea.</li>
+  </ul>
+
+    <h3 id="requisitos-interfaz">3.3 Requisitos de interfaz</h3>
+    <ul>
+      <li><strong>Teclado:</strong> Movimiento izquierda/derecha, pausa.</li>
+      <li><strong>Mouse:</strong> Movimiento de la paleta (opcional).</li>
+      <li><strong>Pantalla:</strong> Menú principal, interfaz de juego, pantalla de fin de juego.</li>
+    </ul>
+  
+    <h3 id="requisitos-rendimiento">3.4 Requisitos de rendimiento</h3>
+    <ul>
+      <li>El sistema deberá tener soporte para pantallas desde una resolución de 720p.</li>
+      <li>El sistema deberá tener una latencia de entrada menor a 100 ms.</li>
+    </ul>
+  
+    <h3 id="restricciones-diseno">3.5 Restricciones de Diseño</h3>
+    <ul>
+      <li><strong>Modularidad:</strong> El sistema debe estar dividido en módulos independientes (motor de juego, UI, entrada, audio, gestor de niveles) para facilitar el mantenimiento y la escalabilidad del producto.</li>
+      <li><strong>Tecnologías estándar:</strong> La versión web debe desarrollarse utilizando tecnologías estándar como HTML5, CSS3 y JavaScript, sin dependencias en plugins externos.</li>
+      <li><strong>Independencia de plataforma:</strong> La lógica del juego no debe estar acoplada a características específicas del sistema operativo o navegador.</li>
+      <li><strong>Resoluciones fijas:</strong> El diseño gráfico debe ajustarse adecuadamente a resoluciones desde 1280×720 píxeles (HD) sin distorsión ni pérdida de funcionalidad.</li>
+      <li><strong>Consistencia visual:</strong> El estilo visual debe mantenerse uniforme en todo el juego, con una estética retro coherente.</li>
+    </ul>
+  
+    <h3 id="atributos-sistema">3.6 Atributos del Sistema</h3>
+    <ul>
+      <li><strong>Disponibilidad:</strong> El juego estará disponible para ser ejecutado localmente en todo momento, sin requerir conexión a internet.</li>
+      <li><strong>Usabilidad:</strong> La interfaz debe ser lo suficientemente intuitiva para que cualquier usuario pueda comprender el funcionamiento del juego sin necesidad de instrucciones complejas.</li>
+      <li><strong>Mantenibilidad:</strong> La arquitectura modular debe permitir realizar correcciones, mejoras o extensiones sin afectar el resto del sistema.</li>
+      <li><strong>Portabilidad:</strong> El sistema debe poder trasladarse fácilmente entre navegadores y sistemas operativos modernos sin modificaciones significativas.</li>
+      <li><strong>Rendimiento:</strong> El sistema debe garantizar un rendimiento fluido, con una tasa de cuadros estable (≥ 30 FPS), baja latencia y tiempos de carga breves.</li>
+      <li><strong>Seguridad:</strong> Aunque no maneja datos sensibles ni conexiones en línea, el sistema debe evitar fallos inesperados y manejar correctamente errores de entrada o estados inválidos.</li>
+    </ul>
+  </section>
+  <section id="apendice">
+    <h2>4. Apéndice</h2>
+    <p>
+      Este documento podrá evolucionar conforme avance el desarrollo. Se podrá actualizar con nuevos requisitos derivados de pruebas, retroalimentación de usuarios o cambios en los objetivos del proyecto.
+    </p>
+  </section>
+
+  <section id="juego">
+    <h2>6. Demo del Juego Arkanoid</h2>
+    <div style="text-align:center;">
+      <canvas id="arkanoidGame" width="900" height="500" style="background:#111; border:2px solid #ffbd39;"></canvas>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Proyecto Arkanoid - Documento SRS</p>
+  </footer>
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
